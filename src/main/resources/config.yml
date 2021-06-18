@@ -1,0 +1,49 @@
+# --- CMD WEBHOOKS ---
+# SPIGOT: https://www.spigotmc.org/members/olliejw.1154275/
+# DISCORD: https://discord.gg/tFhTcQ6yMn
+
+# This is the default webhook URL. If a module is using the webhook 'DEFAULT' then it will use this link
+DefaultURL: REPLACE_WITH_WEBHOOK_URL
+# Where the /cmdw-send command goes
+SendURL: REPLACE_WITH_WEBHOOK_URL
+
+# ============ MODULES ============ #
+
+# When the server starts
+Start:
+  Enabled: true
+  Message: 'Server started!'
+  Webhook: DEFAULT
+
+# When the server stops
+Stop:
+  Enabled: true
+  Message: 'Server stopped!'
+  Webhook: DEFAULT
+
+# When someone runs a command
+Cmd:
+  Enabled: true
+  Message: '[player] sent command `[cmd]`'
+  Webhook: DEFAULT
+
+# When someones sends a message
+Msg:
+  Enabled: true
+  Message: '[player]: `[msg]`'
+  Webhook: DEFAULT
+
+# When someone joins
+Join:
+  Enabled: true
+  Message: '[player] has joined'
+  Webhook: DEFAULT
+
+# When someone leaves
+Leave:
+  Enabled: true
+  Message: '[player] has left'
+  Webhook: DEFAULT
+
+
+

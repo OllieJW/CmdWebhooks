@@ -1,0 +1,17 @@
+name: CmdWebhooks
+version: ${project.version}
+main: com.olliejw.cmdwebhooks.CmdWebhooks
+api-version: 1.16
+authors: [ OllieJW ]
+softdepend: [ AdvancedBan ]
+description: Sends Discord webhook on user command
+website: mc.eutora.com
+commands:
+  cmdw-reload:
+    description: Reloads plugin
+    usage: /<command>
+    aliases: [ wh-reload, webhook-reload ]
+  cmdw-send:
+    description: Sends message
+    usage: /<command>
+    aliases: [ wh-send, webhook-send, send ]
