@@ -1,39 +1,44 @@
 # CmdWebhooks
 CmdWebhooks Logs all Joins, Leaves, Commands, Chat and more to your Discord server using webhooks!
 
-# API
-**Make the event: (If you arent using events, skip this)**
-In this example we will make a Votifier Logger!
+# API Usage
+pom.xml:
 ```
-import com.vexsoftware.votifier.model.VotifierEvent;
+<dependencies>
+    <dependency>
+        <groupId>me.olliejw</groupId>
+        <artifactId>CmdWebhooks</artifactId>
+        <version>LATEST</version>
+        <scope>provided</scope>
+    </dependency>
+</dependencies>
+```
+Usage:
+```
+import me.olliejw.cmdwebhooks.SendWebhook;
 
-@EventHandler
-public void onVote(VotifierEvent event) {
+public class PlayerJoin implements Listener {
+    @EventHandler
+    public void playerJoins(PlayerJoinEvent event) {
+        String playerName = event.getPlayer().getDisplayName();
+        
+        SendWebhook webhook = new SendWebhook("URL");
+        
+        String content = ("[player] has joined!").replace("[player]", playerName);
+        
+        webhook.setContent(content); // Sets the message content
 
+        try {
+            webhook.execute(); // Sends message to Discord
+        } catch (MalformedURLException var5) {
+            System.out.println("[CmdWebhook] Error sending Webhook!");
+        } catch (IOException var6) {
+            var6.printStackTrace();
+        }
+    }
 }
 ```
 
-**Use CmdWebhooks:**
-```
-// Get our webhook link ready
-SendWebhook webhook = new SendWebhook("WEBHOOK_LINK");
 
-// Get our Content Ready
-webhook.setContent("Message to send to Discord");
 
-// Sending our Message (Embed it in a try/catch)
-try {
-    webhook.execute();
-} catch(Exception e){
-    System.out.println("ERROR SENDING VOTE WEBHOOK!!!");
-}
-```
-
-**Register our event: (Main Class)**
-```
-@Override
-public void onEnable() {
-    this.getServer().getPluginManager().registerEvents(new VoteEvent(), this);
-}
-```
 
