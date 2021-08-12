@@ -1,4 +1,4 @@
-package com.olliejw.cmdwebhooks;
+package me.olliejw.cmdwebhooks;
 
 import javax.net.ssl.HttpsURLConnection;
 import java.awt.*;

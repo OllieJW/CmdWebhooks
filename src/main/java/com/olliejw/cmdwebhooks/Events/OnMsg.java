@@ -1,6 +1,6 @@
-package com.olliejw.cmdwebhooks.Events;
+package me.olliejw.cmdwebhooks.Events;
 
-import com.olliejw.cmdwebhooks.SendWebhook;
+import me.olliejw.cmdwebhooks.SendWebhook;
 import org.bukkit.ChatColor;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

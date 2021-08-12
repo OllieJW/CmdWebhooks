@@ -1,6 +1,6 @@
-package com.olliejw.cmdwebhooks.Commands;
+package me.olliejw.cmdwebhooks.Commands;
 
-import com.olliejw.cmdwebhooks.CmdWebhooks;
+import me.olliejw.cmdwebhooks.CmdWebhooks;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

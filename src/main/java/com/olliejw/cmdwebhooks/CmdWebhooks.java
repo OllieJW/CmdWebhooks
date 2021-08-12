@@ -1,11 +1,11 @@
-package com.olliejw.cmdwebhooks;
+package me.olliejw.cmdwebhooks;
 
-import com.olliejw.cmdwebhooks.Commands.Reload;
-import com.olliejw.cmdwebhooks.Commands.Send;
-import com.olliejw.cmdwebhooks.Events.OnCmd;
-import com.olliejw.cmdwebhooks.Events.OnJoin;
-import com.olliejw.cmdwebhooks.Events.OnLeave;
-import com.olliejw.cmdwebhooks.Events.OnMsg;
+import me.olliejw.cmdwebhooks.Commands.Reload;
+import me.olliejw.cmdwebhooks.Commands.Send;
+import me.olliejw.cmdwebhooks.Events.OnCmd;
+import me.olliejw.cmdwebhooks.Events.OnJoin;
+import me.olliejw.cmdwebhooks.Events.OnLeave;
+import me.olliejw.cmdwebhooks.Events.OnMsg;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.event.Listener;
@@ -34,7 +34,7 @@ public class CmdWebhooks extends JavaPlugin implements Listener {
         //============== STARTUP MESSAGE ==============//
         this.webhook = this.getConfig().getString("WebhookURL");
         String message;
-        if (this.getConfig().getBoolean("Start")) {
+        if (this.getConfig().getBoolean("Start.Enabled")) {
             this.sendDiscordMessage(this.getConfig().getString("Start.Message"));
         }
 
@@ -96,8 +96,8 @@ public class CmdWebhooks extends JavaPlugin implements Listener {
         File config = new File(getDataFolder(), "config.yml");
         FileConfiguration cfg = YamlConfiguration.loadConfiguration(config);
 
-        if (cfg.getBoolean("Stop")) {
-            this.sendDiscordMessage(cfg.getString("ServerStop"));
+        if (cfg.getBoolean("Stop.Enabled")) {
+            this.sendDiscordMessage(cfg.getString("Stop.Message"));
         }
     }
 }
